@@ -1,0 +1,13 @@
+﻿@model List<WoodStore.Domain.Entity.Order>
+@{
+    Layout = "_Layout";
+}
+
+@foreach (var order in Model)
+{
+    <p>@order.OrderID</p>
+    <p>@order.PickerID</p>
+    <p>@order.OrderDate</p>
+    
+
+}

@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodStore", "WoodStore\WoodStore.csproj", "{DCDDF437-58BF-4256-A635-0ABFD6E19C0B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AB439794-BB6F-4948-8DEC-CDBB1A3FCA4D} = {AB439794-BB6F-4948-8DEC-CDBB1A3FCA4D}
+		{F04119B0-AD22-4907-ACB5-F8BF053A248A} = {F04119B0-AD22-4907-ACB5-F8BF053A248A}
+		{A27338D4-F7A6-4C4B-BCE1-88A5BD1FD448} = {A27338D4-F7A6-4C4B-BCE1-88A5BD1FD448}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{1FEE309B-BCDF-48D3-AFE6-0B96603BC5CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodStore.Domain", "WoodStore.Domain\WoodStore.Domain.csproj", "{AB439794-BB6F-4948-8DEC-CDBB1A3FCA4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{CFBDE965-D9AC-4979-B609-01EE2E044017}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodStore.DAL", "WoodStore.DAL\WoodStore.DAL.csproj", "{A27338D4-F7A6-4C4B-BCE1-88A5BD1FD448}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{CCAA7A7F-AD19-4FDD-8F5C-D7196F53177B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodStore.Service", "WoodStore.Service\WoodStore.Service.csproj", "{F04119B0-AD22-4907-ACB5-F8BF053A248A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AB439794-BB6F-4948-8DEC-CDBB1A3FCA4D} = {AB439794-BB6F-4948-8DEC-CDBB1A3FCA4D}
+		{A27338D4-F7A6-4C4B-BCE1-88A5BD1FD448} = {A27338D4-F7A6-4C4B-BCE1-88A5BD1FD448}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCDDF437-58BF-4256-A635-0ABFD6E19C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCDDF437-58BF-4256-A635-0ABFD6E19C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCDDF437-58BF-4256-A635-0ABFD6E19C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCDDF437-58BF-4256-A635-0ABFD6E19C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB439794-BB6F-4948-8DEC-CDBB1A3FCA4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB439794-BB6F-4948-8DEC-CDBB1A3FCA4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB439794-BB6F-4948-8DEC-CDBB1A3FCA4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB439794-BB6F-4948-8DEC-CDBB1A3FCA4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A27338D4-F7A6-4C4B-BCE1-88A5BD1FD448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A27338D4-F7A6-4C4B-BCE1-88A5BD1FD448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A27338D4-F7A6-4C4B-BCE1-88A5BD1FD448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A27338D4-F7A6-4C4B-BCE1-88A5BD1FD448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F04119B0-AD22-4907-ACB5-F8BF053A248A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04119B0-AD22-4907-ACB5-F8BF053A248A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04119B0-AD22-4907-ACB5-F8BF053A248A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04119B0-AD22-4907-ACB5-F8BF053A248A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AB439794-BB6F-4948-8DEC-CDBB1A3FCA4D} = {1FEE309B-BCDF-48D3-AFE6-0B96603BC5CE}
+		{A27338D4-F7A6-4C4B-BCE1-88A5BD1FD448} = {CFBDE965-D9AC-4979-B609-01EE2E044017}
+		{F04119B0-AD22-4907-ACB5-F8BF053A248A} = {CCAA7A7F-AD19-4FDD-8F5C-D7196F53177B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C90BF03-EB2B-4E1F-872E-5B9CE594BD18}
+	EndGlobalSection
+EndGlobal
