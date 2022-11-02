@@ -29,7 +29,7 @@ namespace WoodStore.Service.Implementations
                 if(order == null)
                 {
                     baseResponse.Description = "Order not found!";
-                    baseResponse.StatusCode = StatusCode.UserNotFound;
+                    baseResponse.StatusCode = StatusCode.OrderNotFound;
                     return baseResponse;
                 }
 
@@ -46,16 +46,16 @@ namespace WoodStore.Service.Implementations
             }
         }
 
-        public async Task<IBaseResponse<Order>> GetOrderByDate(DateTime orderDate)
+        public async Task<IBaseResponse<Order>> GetById(int id)
         {
             var baseResponse = new BaseResponse<Order>();
             try
             {
-                var order = await _orderRepository.GetByDate(orderDate);
+                var order = await _orderRepository.GetById(id);
                 if (order == null)
                 {
                     baseResponse.Description = "Order not found!";
-                    baseResponse.StatusCode = StatusCode.UserNotFound;
+                    baseResponse.StatusCode = StatusCode.OrderNotFound;
                     return baseResponse;
                 }
 
@@ -111,7 +111,7 @@ namespace WoodStore.Service.Implementations
                 if (order == null)
                 {
                     baseResponse.Description = "Order not found!";
-                    baseResponse.StatusCode = StatusCode.UserNotFound;
+                    baseResponse.StatusCode = StatusCode.OrderNotFound;
                     return baseResponse;
                 }
 
@@ -151,6 +151,44 @@ namespace WoodStore.Service.Implementations
                 return new BaseResponse<IEnumerable<Order>>()
                 {
                     Description = $"[GetAllOrders] : {ex.Message}",
+                    StatusCode = StatusCode.InternalServerError
+                };
+            }
+        }
+
+        public async Task<IBaseResponse<Order>> UpdateOrder(int orderId, OrderViewModel model)
+        {
+            var baseResponse = new BaseResponse<Order>();
+
+            try
+            {
+                var order = await _orderRepository.GetById(orderId);
+                if (order == null)
+                {
+                    baseResponse.Description = "Заказов нет!";
+                    baseResponse.StatusCode = StatusCode.OrderNotFound;
+                    return baseResponse;
+                }
+
+                order.OrderID = model.Id;
+                order.ClientID = model.ClientID;
+                order.ClientsComment = model.ClientsComment;
+                order.OrderDate = model.OrderDate;
+                order.OrderPrice = model.OrderPrice;
+                order.PickerID = model.PickerID;
+                order.SalesManagerID = model.SalesManagerID;
+                order.СourierID = model.СourierID;
+
+                await _orderRepository.Update(order);
+
+                return baseResponse;
+                
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<Order>()
+                {
+                    Description = $"[UpdateOrder] : {ex.Message}",
                     StatusCode = StatusCode.InternalServerError
                 };
             }

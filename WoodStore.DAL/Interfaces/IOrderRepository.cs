@@ -8,7 +8,7 @@ namespace WoodStore.DAL.Interfaces
 {
     public interface IOrderRepository : IBaseRepository<Order>
     {
-        Task<Order> GetByDate(DateTime orderDate);
+        Task<Order> GetById(int id);
 
     }
 }

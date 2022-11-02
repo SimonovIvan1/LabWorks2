@@ -6,7 +6,7 @@ namespace WoodStore.Domain.Enum
 {
     public enum StatusCode
     {
-        UserNotFound = 0,
+        OrderNotFound = 0,
         Ok = 200,
         InternalServerError = 404
     }

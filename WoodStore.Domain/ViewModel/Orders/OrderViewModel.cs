@@ -6,6 +6,8 @@ namespace WoodStore.Domain.ViewModel.Orders
 {
     public class OrderViewModel
     {
+
+        public int Id { get; set; }
         public DateTime OrderDate { get; set; }
 
         public decimal OrderPrice { get; set; }

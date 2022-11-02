@@ -34,9 +34,9 @@ namespace WoodStore.DAL.Repositories
             return true;
         }
 
-        public async Task<Order> GetByDate(DateTime orderDate)
+        public async Task<Order> GetById(int id)
         {
-            return await _db.Order.FirstOrDefaultAsync(order => order.OrderDate == orderDate);
+            return await _db.Order.FirstOrDefaultAsync(order => order.OrderID == id);
         }
 
         public async Task<Order> Get(int orderID)
@@ -47,6 +47,14 @@ namespace WoodStore.DAL.Repositories
         public async Task<List<Order>> Select()
         {
             return await _db.Order.ToListAsync();
+        }
+
+        public async Task<Order> Update(Order entity)
+        {
+            _db.Order.Update(entity);
+            await _db.SaveChangesAsync();
+
+            return entity;
         }
     }
 }
