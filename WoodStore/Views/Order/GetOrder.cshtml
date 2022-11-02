@@ -73,13 +73,11 @@ else
                             <li class="list-group-item">Комментарий клиента: @order.ClientsComment</li>
                         </ul>
                         <div class="card-body">
-                            <a asp-action="GetOrder" asp-route-id="@order.OrderID" class="card-link">Перейти</a>
-                            @* <a asp-controller="Basket" asp-action="Add" asp-route-id="@id" class="card-link">Добавить</a> *@
+                            <a asp-action="GetOrderById" asp-route-id="@order.OrderID" class="card-link">Перейти</a>
+                            <hr />
+                            <a asp-controller="Order" asp-action="Delete" asp-route-id="@order.OrderID" class="btn btn-danger">Удалить</a>
+                            <a asp-controller="Order" asp-action="Save" asp-route-id="@order.OrderID" class="btn btn-primary">Изменить</a>
 
-                                <hr />
-                                <a asp-controller="Order" asp-action="Delete" asp-route-id="@order.OrderID" class="btn btn-danger">Удалить</a>
-                                <a asp-controller="Order" asp-action="Save" asp-route-id="@order.OrderID" class="btn btn-primary">Изменить</a>
-               
                         </div>
                     </div>
                 </div>

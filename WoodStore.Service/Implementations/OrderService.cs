@@ -79,6 +79,7 @@ namespace WoodStore.Service.Implementations
             try {
                 var order = new Order()
                 {
+                    OrderID = orderViewModel.Id,
                     OrderDate = orderViewModel.OrderDate,
                     OrderPrice = orderViewModel.OrderPrice,
                     ClientsComment = orderViewModel.ClientsComment,
@@ -170,7 +171,6 @@ namespace WoodStore.Service.Implementations
                     return baseResponse;
                 }
 
-                order.OrderID = model.Id;
                 order.ClientID = model.ClientID;
                 order.ClientsComment = model.ClientsComment;
                 order.OrderDate = model.OrderDate;
